@@ -1,5 +1,6 @@
 package id.hakimrizki.hakim_1202154213_modul5;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,5 +50,11 @@ public class CreateActivity extends AppCompatActivity {
 
         TodoList todoList = new TodoList(todo, description, priority);
         dbHelper.saveNewTodo(todoList);
+
+        goBackHome();
+    }
+
+    private void goBackHome(){
+        startActivity(new Intent(CreateActivity.this, MainActivity.class));
     }
 }
